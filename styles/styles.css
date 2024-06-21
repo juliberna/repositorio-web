@@ -1,0 +1,1053 @@
+* {
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(to bottom, rgb(0, 35, 192), rgba(57, 0, 148, 0.991));
+  background-size: contain;
+  font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,
+    sans-serif;
+}
+
+.contenedor {
+  background-color: rgba(0, 0, 0, 0.625);
+  height: 1080px;
+  width: 100%;
+}
+
+.logo {
+  margin-left: 160px;
+}
+
+.logo h1{
+  color: white;
+  text-shadow: 0px 0px 3px #fff;
+}
+
+.inicio-sesion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.642);
+  border-radius: 10px;
+  margin: 20px 700px;
+  height: 500px;
+}
+
+.inicio-sesion .texto-inicio {
+  text-align: left;
+  margin-top: 10px;
+  width: 320px;
+}
+
+.texto-inicio p {
+  margin-top: 30px;
+  color: white;
+  text-align: center;
+  text-shadow: 0px 0px 3px #fff;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.inicio-sesion .datos {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.datos input {
+  margin-top: 15px;
+  background-color: rgba(24, 24, 24, 0.717);
+  border: 1px solid grey;
+  border-radius: 8px;
+  color: white;
+  height: 55px;
+  width: 320px;
+  font-size: 16px;
+  padding-left: 20px;
+}
+
+.botones {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.botones .boton-inicio {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  border-radius: 8px;
+  width: 320px;
+  height: 40px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.botones .boton-inicio:hover {
+  background-color: rgb(193, 17, 25);
+  transition: all 0.3s;
+}
+
+.boton-inicio a {
+  text-decoration: none;
+  color: white;
+  margin-top: 10px;
+}
+
+.botones .boton-registro {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(128, 128, 128, 0.4);
+  border-radius: 8px;
+  width: 320px;
+  height: 40px;
+  text-align: center;
+  transition: all 0.3s;
+  margin-top: 20px;
+}
+
+.botones .boton-registro:hover {
+  background-color: rgba(128, 128, 128, 0.3);
+  transition: all 0.3s;
+}
+
+.boton-registro a {
+  text-decoration: none;
+  color: white;
+  margin-top: 10px;
+}
+
+.botones .boton-contra {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  width: 320px;
+  height: 40px;
+  text-align: center;
+  transition: all 0.3s;
+  margin-top: 30px;
+}
+
+.boton-contra a {
+  text-decoration: none;
+  color: white;
+  margin-top: 10px;
+}
+
+.boton-contra a:hover {
+  text-decoration: underline;
+  color: grey;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 1400px) {
+  body {
+    background: linear-gradient(to bottom, rgb(0, 35, 192), rgba(57, 0, 148, 0.991));
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,
+      sans-serif;
+  }
+
+  .contenedor {
+    background-color: rgba(0, 0, 0, 0.625);
+    height: 1080px;
+    width: 100%;
+  }
+
+  .logo {
+    margin-left: 160px;
+  }
+
+  .logo img {
+    height: 80px;
+    width: 148px;
+  }
+
+  .inicio-sesion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.642);
+    border-radius: 10px;
+    margin: 20px 450px;
+    height: 500px;
+  }
+
+  .inicio-sesion .texto-inicio {
+    text-align: left;
+    margin-top: 10px;
+    width: 320px;
+  }
+
+  .texto-inicio p {
+    margin-top: 30px;
+    color: white;
+
+    font-size: 35px;
+    font-weight: 700;
+  }
+
+  .inicio-sesion .datos {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .datos input {
+    margin-top: 15px;
+    background-color: rgba(24, 24, 24, 0.717);
+    border: 1px solid grey;
+    border-radius: 8px;
+    color: white;
+    height: 55px;
+    width: 320px;
+    font-size: 16px;
+    padding-left: 20px;
+  }
+
+  .botones {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .botones .boton-inicio {
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    border-radius: 8px;
+    width: 320px;
+    height: 40px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .botones .boton-inicio:hover {
+    background-color: rgb(193, 17, 25);
+    transition: all 0.3s;
+  }
+
+  .boton-inicio a {
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
+  }
+
+  .botones .boton-registro {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(128, 128, 128, 0.4);
+    border-radius: 8px;
+    width: 320px;
+    height: 40px;
+    text-align: center;
+    transition: all 0.3s;
+    margin-top: 20px;
+  }
+
+  .botones .boton-registro:hover {
+    background-color: rgba(128, 128, 128, 0.3);
+    transition: all 0.3s;
+  }
+
+  .boton-registro a {
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
+  }
+
+  .botones .boton-contra {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    width: 320px;
+    height: 40px;
+    text-align: center;
+    transition: all 0.3s;
+    margin-top: 30px;
+  }
+
+  .boton-contra a {
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
+  }
+
+  .boton-contra a:hover {
+    text-decoration: underline;
+    color: grey;
+  }
+}
+
+.inicio-sesion .texto-contrasena {
+  text-align: left;
+  margin-top: 10px;
+  width: 320px;
+}
+
+.texto-contrasena p {
+  margin-top: 30px;
+  color: white;
+  text-align: center;
+  font-size: 31px;
+  text-shadow: 0px 0px 3px #fff;
+  font-weight: 700;
+}
+
+.inicio-sesion .datos-contrasena {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.datos-contrasena input {
+  margin-top: 25px;
+  background-color: rgba(24, 24, 24, 0.717);
+  border: 1px solid grey;
+  border-radius: 8px;
+  color: white;
+  height: 55px;
+  width: 320px;
+  font-size: 16px;
+  padding-left: 20px;
+}
+
+.botones .boton-enviar {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  border-radius: 8px;
+  width: 320px;
+  height: 40px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.botones .boton-enviar:hover {
+  background-color: rgb(193, 17, 25);
+  transition: all 0.3s;
+}
+
+.boton-enviar a {
+  text-decoration: none;
+  color: white;
+  margin-top: 10px;
+}
+
+.botones .boton-cancelar {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(128, 128, 128, 0.4);
+  border-radius: 8px;
+  width: 320px;
+  height: 40px;
+  text-align: center;
+  transition: all 0.3s;
+  margin-top: 20px;
+}
+
+.botones .boton-cancelar:hover {
+  background-color: rgba(128, 128, 128, 0.3);
+  transition: all 0.3s;
+}
+
+.boton-cancelar a {
+  text-decoration: none;
+  color: white;
+  margin-top: 10px;
+}
+
+.registro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.642);
+  border-radius: 10px;
+  margin: 20px 100px;
+  height: 600px;
+}
+
+.registro .texto-registro {
+  text-align: left;
+  margin-top: 10px;
+  width: 320px;
+}
+
+.texto-registro p {
+  margin-top: 30px;
+  color: white;
+  text-align: center;
+  text-shadow: 0px 0px 3px #fff;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.datos-registro {
+  display: flex;
+  justify-content: space-between;
+  height: 400px;
+  width: 800px;
+}
+
+.datos-registro .datos-izq {
+  display: flex;
+  flex-direction: column;
+}
+
+.datos-izq input {
+  margin-top: 25px;
+  background-color: rgba(24, 24, 24, 0.717);
+  border: 1px solid grey;
+  border-radius: 4px;
+  color: white;
+  height: 55px;
+  width: 320px;
+  font-size: 16px;
+  padding-left: 20px;
+}
+
+.datos-registro .datos-der {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.941), transparent);
+  height: 70px;
+  padding-top: 30px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.contenedor-principal {
+  margin-top: 200px;
+}
+
+.home {
+  display: flex;
+}
+
+.home a {
+  margin-top: 10px;
+}
+
+.home img {
+  height: 25px;
+  width: 25px;
+  margin-top: 12px;
+}
+
+.series {
+  display: flex;
+}
+
+.series a {
+  margin-top: 10px;
+}
+
+.series img {
+  height: 25px;
+  width: 25px;
+  margin-top: 12px;
+}
+
+.peliculas {
+  display: flex;
+}
+
+.peliculas a {
+  margin-top: 10px;
+}
+
+.peliculas img {
+  height: 25px;
+  width: 25px;
+  margin-top: 12px;
+}
+
+.perfil {
+  display: flex;
+}
+
+.perfil a {
+  margin-top: 10px;
+}
+
+.perfil img {
+  height: 25px;
+  width: 25px;
+  margin-top: 12px;
+}
+
+.contenedor-perfil {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.642);
+  border-radius: 10px;
+  margin: 20px 200px;
+  height: 600px;
+  color: white;
+}
+
+.profile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+}
+
+.profile div{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  width: 400px;
+  text-align: center;
+}
+
+.profile div p{
+  width: 200px;
+  margin-top: 10px;
+  height: 20px;
+}
+
+.profile div input{
+  background-color: rgba(128, 128, 128, 0.4);
+  border-radius: 8px;
+  width: 220px;
+  height: 40px;
+  border: 1px solid grey;
+  text-align: center;
+  transition: all 0.3s;
+  margin-top: 0;
+  font-size: 14px;
+  color: white;
+}
+
+.datos-der{
+  color: #fff;
+  margin-top: 20px;
+}
+
+.botones .boton-confirmar {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(128, 128, 128, 0.4);
+  border-radius: 8px;
+  width: 320px;
+  height: 40px;
+  text-align: center;
+  transition: all 0.3s;
+  margin-top: 20px;
+}
+
+.boton-confirmar a{
+  text-decoration: none;
+  color: #fff;
+  margin-top: 8px;
+}
+
+.boton-confirmar:hover{
+  background-color: rgba(128, 128, 128, 0.3);
+  transition: all 0.3s;
+}
+
+.peliculas-inicio{
+  display: grid;
+  grid-template-columns: 
+    repeat(
+      auto-fit,
+      minmax(150px, 1fr)
+    );
+    gap: 32px;
+    margin: 80px 100px;
+}
+
+.peliculas-inicio img{
+  border-radius: 8px;
+  width: 100%;
+  height: 250px;
+  box-shadow: 0px 0px 10px #fff;
+}
+
+.busqueda{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.busqueda-nombre{
+  padding: 5px;
+}
+
+.busqueda-nombre input{
+  width: 212px;
+  height: 30px;
+  padding: 0px 20px;
+  font-size: 18px;
+  color: black;
+  outline: none;
+  border: 1px solid silver;
+  border-radius: 10px;
+}
+
+.categoria{
+  padding: 5px;
+ 
+}
+
+
+.categoria select{
+    width: 212px;
+    height: 30px;
+    padding: 0px 14px;
+    font-size: 18px;
+    color: black;
+    border: 1px solid silver;
+    border-radius: 10px;
+}
+
+.categoria label{
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.series-inicio{
+  display: grid;
+  grid-template-columns: 
+    repeat(
+      auto-fit,
+      minmax(150px, 1fr)
+    );
+    gap: 32px;
+    margin: 80px 100px;
+}
+
+.series-inicio img{
+  border-radius: 8px;
+  width: 100%;
+  height: 250px;
+  box-shadow: 0px 0px 10px #fff;
+}
+
+.detalle-pelicula{
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.trailer{
+  width: 600px;
+}
+
+.trailer iframe{
+  width: 500px;
+  height: 400px;
+}
+
+.datos-pelis{
+  width: 600px;
+}
+
+.datos-pelis p{
+  color: white;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.boton-comenzar{
+  border: 1px solid grey;
+  margin-top: 30px;
+  margin-left: 200px;
+  margin-right: 900px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #292F3F;
+  border-radius: 8px;
+  transition: all .2s;
+}
+
+.boton-comenzar:hover{
+  background-color: #45506C;
+  transition: all .2s;
+}
+
+.boton-comenzar a{
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.similares{
+  display: grid;
+  grid-template-columns: 
+    repeat(
+      auto-fit,
+      minmax(150px, 1fr)
+    );
+    gap: 32px;
+    margin: 40px 100px;
+}
+
+.similares img{
+  border-radius: 8px;
+  width: 100%;
+  height: 250px;
+  box-shadow: 0px 0px 10px #fff;
+}
+
+.titulo-similares{
+  color: white;
+  margin-top: 50px;
+  margin-left: 100px;
+}
+
+.titulo-similares p{
+  font-size: 30px;
+}
+
+.temporadas{
+  display: flex;
+  justify-content: space-around;
+}
+
+.temporadas select{
+  width: 200px;
+  height: 30px;
+  margin-left: 20px;
+}
+
+.contenedor-pago{
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  width: 500px;
+}
+
+.contenedor-pago .p-titulo{
+  margin-top: 60px;
+  font-size: 30px;
+  text-align: center;
+  width: 500px;
+}
+
+.tarjeta-credito{
+  display: flex;
+  height: 100px;
+  margin-left: 60px;
+  margin-top: 20px;
+}
+
+.prueba-tarjeta{
+  display: flex;
+}
+
+.prueba-tarjeta p{
+  margin-top: 38px;
+  margin-left: 5px;
+}
+
+.tarjeta{
+  margin-top: 38px;
+  margin-left: 20px;
+}
+
+.cupon-pago{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 100px;
+  margin-left: 60px;
+  margin-top: 20px;
+}
+
+.opcion-cupon{
+  display: flex;
+}
+
+.opcion-cupon p{
+  margin-left: 5px;
+  margin-top: 30px;
+}
+
+.opcion-cupon input{
+  margin-top: 30px;
+}
+
+.contenedor-cupones{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+}
+
+.pago-facil{
+  display: flex;
+}
+
+.pago-facil p{
+  margin-left: 5px;
+}
+
+.rapipago{
+  display: flex;
+}
+
+.rapipago p{
+  margin-left: 5px;
+}
+
+.transferencia{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  margin-left: 60px;
+  margin-top: 20px;
+}
+
+.div-transferencia{
+  display: flex;
+}
+
+.div-transferencia p{
+  margin-top: 38px;
+  margin-left: 5px;
+}
+
+.div-transferencia input{
+  margin-top: 38px;
+}
+
+.div-cbu{
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.contenedor-botones-perfil{
+  margin: 0 400px;
+  display: flex;
+  justify-content: space-around;
+  height: 40px;
+  text-align: center;
+}
+
+.contenedor-botones-perfil .boton_cambios{
+  border-radius: 8px;
+  background-color: #2B3140;
+  width: 200px;
+  padding-top: 8px;
+  transition: all .2s;
+}
+
+.contenedor-botones-perfil .boton_cambios:hover{
+  background-color: #444D68;
+  transition: all .2s;
+}
+
+.boton_cambios a{
+  color: white;
+  text-decoration: none;
+}
+
+.contenedor-botones-perfil .boton_cancel_sub{
+  border-radius: 8px;
+  background-color: #2B3140;
+  width: 200px;
+  padding-top: 8px;
+  transition: all .2s;
+}
+
+.contenedor-botones-perfil .boton_cancel_sub:hover{
+  background-color: #444D68;
+  transition: all .2s;
+}
+
+.boton_cancel_sub a{
+  color: white;
+  text-decoration: none;
+}
+
+.contenedor-pago-2{
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  width: 500px;
+  margin-left: 100px;
+}
+
+.contenedor-pago-2 .p-titulo-2{
+  font-size: 30px;
+  text-align: center;
+  width: 500px;
+}
+
+.tarjeta-credito-2{
+  display: flex;
+  height: 100px;
+  margin-left: 60px;
+  margin-top: 20px;
+}
+
+.prueba-tarjeta-2{
+  display: flex;
+}
+
+.prueba-tarjeta-2 p{
+  margin-top: 38px;
+  margin-left: 5px;
+}
+
+.tarjeta-2{
+  margin-top: 38px;
+  margin-left: 20px;
+}
+
+.cupon-pago-2{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-left: 60px;
+  margin-top: 20px;
+}
+
+.prueba-2{
+  display: flex;
+}
+
+.prueba-2 p{
+  margin-left: 5px;
+}
+
+.opcion-cupon-2{
+  display: flex;
+}
+
+.opcion-cupon-2 p{
+  margin-left: 5px;
+  margin-top: 30px;
+}
+
+.opcion-cupon-2 input{
+  margin-top: 30px;
+}
+
+.contenedor-cupones-2{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+}
+
+.pago-facil-2{
+  display: flex;
+}
+
+.pago-facil-2 p{
+  margin-left: 5px;
+}
+
+.rapipago-2{
+  display: flex;
+}
+
+.rapipago-2 p{
+  margin-left: 5px;
+}
+
+.transferencia-2{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  margin-left: 60px;
+}
+
+.div-transferencia-2{
+  display: flex;
+}
+
+.div-transferencia-2 p{
+  margin-top: 38px;
+  margin-left: 5px;
+}
+
+.div-transferencia-2 input{
+  margin-top: 38px;
+}
+
+.div-cbu-2{
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.botones-registro {
+  margin-top: 30px;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.botones-registro .boton-confirmar {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(128, 128, 128, 0.4);
+  border-radius: 8px;
+  width: 320px;
+  height: 40px;
+  text-align: center;
+  transition: all 0.3s;
+  margin-top: 20px;
+}
+
+.boton-confirmar a{
+  text-decoration: none;
+  color: #fff;
+  margin-top: 8px;
+}
+
+.boton-confirmar:hover{
+  background-color: rgba(128, 128, 128, 0.3);
+  transition: all 0.3s;
+}
+
+.botones-registro .boton-cancelar {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(128, 128, 128, 0.4);
+  border-radius: 8px;
+  width: 320px;
+  height: 40px;
+  text-align: center;
+  transition: all 0.3s;
+  margin-top: 20px;
+}
+
+.botones-registro .boton-cancelar:hover {
+  background-color: rgba(128, 128, 128, 0.3);
+  transition: all 0.3s;
+}
+
+.boton-cancelar a {
+  text-decoration: none;
+  color: white;
+  margin-top: 10px;
+}
+
+.datos-pelis a{
+  text-decoration: none;
+  color: white;
+}
+
+.datos-pelis a:hover{
+  color: rgba(128, 128, 128, 0.3);
+  transition: all 0.3s;
+}
+
+
+
+

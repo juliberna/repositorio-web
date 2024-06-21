@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <title>Mi Perfil</title>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="nav">
+        <div class="home">
+          <img src="../assets/images/baseline_home_white_24dp.png" alt="">
+          <a href="../index.html">Home</a>
+        </div>
+        <div class="series">
+          <img src="../assets/images/baseline_theaters_white_24dp.png" alt="">
+          <a href="series.html">Series</a>
+        </div>
+        <div class="peliculas">
+          <img src="../assets/images/baseline_theaters_white_24dp.png" alt="">
+          <a href="peliculas.html">Películas</a>
+        </div>
+        <div class="perfil">
+          <img src="../assets/images/baseline_account_circle_white_24dp.png" alt="">
+          <a href="perfil.html">Perfil</a>
+        </div>
+      </div>
+  
+      <div class="contenedor-perfil">
+        <div class="profile">
+          <div>
+            <img src="../assets/images/harryPotter.jpg" alt="" width="100px" height="100px">
+          </div>
+          <div>
+            <p>Nombre de usuario</p>
+          </div>
+          <div class="email">
+            <p>E-mail</p>
+            <p>usuario@gmail.com</p>
+          </div>
+  
+          <div class="contraseña">
+            <p>Contraseña</p>
+            <p>***********</p>
+          </div>
+  
+          <div class="contraseña-nueva">
+            <p>Nueva contraseña</p>
+            <input
+              type="password"
+              id="contraseña"
+              placeholder="Ingrese nueva contraseña"
+              class="boton-registro"
+            />
+          </div>
+  
+          <div class="contraseña-repetir-nueva">
+            <p>Repetir contraseña</p>
+            <input
+              type="password"
+              id="contraseña"
+              placeholder="Ingrese nueva contraseña"
+            />
+          </div>
+        </div>
+    
+  
+        <div class="contenedor-pago">
+          <p class="p-titulo">Método de pago</p>
+  
+          <div class="tarjeta-credito">
+            <div class="prueba-tarjeta">
+              <input
+                class="input-flex"
+                type="radio"
+                name="pagos"
+                id="tarjeta-credito"
+              />
+              <p class="p-flex">Tarjeta de crédito</p>
+            </div>
+  
+            <div class="tarjeta">
+              <input
+                type="number"
+                name="pagos"
+                id="tarjeta-credito"
+                placeholder="Numero de tarjeta"
+                minlength="16"
+                maxlength="16"
+                size="20"
+              />
+              <input
+                type="password"
+                name="pagos"
+                id="tarjeta-credito"
+                placeholder="XXX"
+                minlength="3"
+                maxlength="3"
+                size="3"
+              />
+            </div>
+          </div>
+  
+          <div class="cupon-pago">
+            <div class="opcion">
+              <input
+                class="input-flex"
+                type="radio"
+                name="pagos"
+                id="cupon-pago"
+              />
+              <p class="p-flex">Cupón de pago</p>
+            </div>
+  
+            <div class="contenedor-cupones">
+              <div class="pago-facil">
+                <input type="radio" name="pagos-cupon" id="pago-facil" />
+                <p class="cupones-titulo">Pago fácil</p>
+              </div>
+  
+              <div class="rapipago">
+                <input type="radio" name="pagos-cupon" id="rapipago" />
+                <p class="cupones-titulo">RapiPago</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="transferencia">
+            <div class="div-transferencia">
+              <input
+                class="input-flex"
+                type="radio"
+                name="pagos"
+                id="transferencia"
+              />
+              <p class="p-flex">Transferencia bancaria</p>
+            </div>
+            <div class="div-cbu">
+              <p>CBU : 6578797645237869865745</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contenedor-botones-perfil">
+        <div class="boton_cambios">
+          <a href="#">Guardar cambios</a>
+        </div>
+        <div class="boton_cancel_sub">
+          <a href="#">Cancelar subscripcion</a>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>

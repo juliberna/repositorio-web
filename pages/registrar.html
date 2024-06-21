@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <title>Registro</title>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="logo">
+        <img src="../assets/images/logo.png" alt="" />
+      </div>
+      <div class="registro">
+        <div class="texto-registro">
+          <p>Registrarse</p>
+        </div>
+        <div class="datos-registro">
+          <div class="datos-izq">
+            <input type="text" id="nombre" placeholder="Nombre de usuario" />
+            <input type="text" id="apellido" placeholder="Ingrese apellido" />
+            <input type="email" id="email" placeholder="Ingrese email" />
+            <input
+              type="text"
+              id="nombreusuario"
+              placeholder="Nombre de usuario"
+            />
+            <input type="password" id="contraseña" placeholder="Contraseña" />
+            <input
+              type="password"
+              id="repetircontraseña"
+              placeholder="Repetir contraseña"
+            />
+          </div>
+          <div class="datos-der">
+            <div class="contenedor-pago-2">
+              <p class="p-titulo-2">Método de pago</p>
+
+              <div class="tarjeta-credito-2">
+                <div class="prueba-tarjeta-2">
+                  <input
+                    class="input-flex"
+                    type="radio"
+                    name="pagos"
+                    id="tarjeta-credito"
+                  />
+                  <p class="p-flex">Tarjeta de crédito</p>
+                </div>
+
+                <div class="tarjeta-2">
+                  <input
+                    type="number"
+                    name="pagos"
+                    id="tarjeta-credito"
+                    placeholder="Número de tarjeta"
+                    minlength="16"
+                    maxlength="16"
+                    size="20"
+                  />
+                  <input
+                    type="password"
+                    name="pagos"
+                    id="tarjeta-credito"
+                    placeholder="XXX"
+                    minlength="3"
+                    maxlength="3"
+                    size="3"
+                  />
+                </div>
+              </div>
+
+              <div class="cupon-pago-2">
+                <div class="prueba-2">
+                  <input
+                    class="input-flex"
+                    type="radio"
+                    name="pagos"
+                    id="cupon-pago"
+                  />
+                  <p class="p-flex">Cupón de pago</p>
+                </div>
+
+                <div class="contenedor-cupones-2">
+                  <div class="pago-facil-2">
+                    <input type="checkbox" name="pagos" id="pago-facil" />
+                    <p class="cupones-titulo">Pago fácil</p>
+                  </div>
+
+                  <div class="rapipago-2">
+                    <input type="checkbox" name="pagos" id="rapipago" />
+                    <p class="cupones-titulo">RapiPago</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="transferencia-2">
+                <div class="div-transferencia-2">
+                  <input
+                    class="input-flex"
+                    type="radio"
+                    name="pagos"
+                    id="transferencia"
+                  />
+                  <p class="parrafo-transferencia">Transferencia bancaria</p>
+                </div>
+                <div class="div-cbu-2">
+                  <p>CBU : 6578797645237869865745</p>
+                </div>
+              </div>
+
+              <div class="botones-registro">
+                <div class="boton-confirmar">
+                  <a href="../index.html">Confirmar</a>
+                </div>
+                <div class="boton-cancelar">
+                  <a href="../index.html">Cancelar</a>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
