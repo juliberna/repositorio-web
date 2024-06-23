@@ -1048,6 +1048,11 @@ body {
   transition: all 0.3s;
 }
 
+.contenedor-carousel{
+  margin: 0 600px;
+  height: 500px;
+}
+
 
 
 
