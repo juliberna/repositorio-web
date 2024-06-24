@@ -8,7 +8,8 @@ window.onload = function(){
     let inputTransferencia = document.querySelector("#transferencia");
     let inputPago = document.querySelector("#pago-facil");
     let inputRapi = document.querySelector("#rapipago");
-
+    let claveTarjeta = document.querySelector("#clave-tarjeta");
+    let numeroTarjeta = document.querySelector("#numeros-tarjeta");
 
     contrasenia.addEventListener("keyup", habilitarBotonDeGuardar);
     repetirContrasenia.addEventListener("keyup", habilitarBotonDeGuardar);
@@ -27,7 +28,8 @@ window.onload = function(){
     });
     inputPago.addEventListener("click",destildar);
     inputRapi.addEventListener("click",destildar);
-
+    claveTarjeta.addEventListener("keyup", habilitarBotonDeGuardar);
+    numeroTarjeta.addEventListener("keyup", habilitarBotonDeGuardar);
     function esCaracterEspecial(caracter){
         let cadenaDeCaracteres  = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/;
         return cadenaDeCaracteres.test(caracter);
@@ -57,11 +59,12 @@ window.onload = function(){
         }
         return contrasenia.length >= 8 && contadorDeCaracteres >= 2 && contadorDeLetras >= 2 && contadorDeNumeros >= 2;
     }
+
     
     function habilitarBotonDeGuardar(){
         let contrasenia1 = contrasenia.value;
         let contrasenia2 = repetirContrasenia.value;
-        if((contrasenia1 != "" && contrasenia2 != "" && contrasenia1 === contrasenia2 && contraseniaValida(contrasenia1)) || inputTarjeta.checked || inputCupon.checked || inputTransferencia.checked){
+        if((contrasenia1 != "" && contrasenia2 != "" && contrasenia1 === contrasenia2 && contraseniaValida(contrasenia1)) || (inputTarjeta.checked && validarClaveDeTarjeta(claveTarjeta.value) && validarNumeroTarjeta(numeroTarjeta.value)) || inputCupon.checked || inputTransferencia.checked){
             boton.classList.remove("desactivada");
         }else{
             boton.classList.add("desactivada");
@@ -79,6 +82,16 @@ window.onload = function(){
         if(inputCupon.checked){
             inputPago.checked = true;
         }
+    }
+
+    function validarClaveDeTarjeta(clave){
+        let expRegular = /^[1-9]{3}$/;
+        return expRegular.test(clave);
+    }
+
+    function validarNumeroTarjeta(numero){
+        let expRegular = /^\d{16,19}$/
+        return expRegular.test(numero);
     }
 }
 
