@@ -29,7 +29,8 @@ window.onload = function(){
     inputPago.addEventListener("click",destildar);
     inputRapi.addEventListener("click",destildar);
     claveTarjeta.addEventListener("keyup", habilitarBotonDeGuardar);
-    numeroTarjeta.addEventListener("keyup", habilitarBotonDeGuardar);
+    numeroTarjeta.addEventListener("blur",habilitarBotonDeGuardar);
+
     function esCaracterEspecial(caracter){
         let cadenaDeCaracteres  = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/;
         return cadenaDeCaracteres.test(caracter);
@@ -91,8 +92,20 @@ window.onload = function(){
 
     function validarNumeroTarjeta(numero){
         let expRegular = /^\d{16,19}$/
-        return expRegular.test(numero);
+        let stringCadena = numero.toString();
+        let cadena = 0;
+        for (let index = 0; index < stringCadena.length - 1; index++) {
+            cadena+= parseInt(stringCadena[index]);
+        }
+        let ultimoDigito = parseInt(stringCadena[stringCadena.length-1]);
+        let esValida = expRegular.test(numero) && (cadena%2 !== 0 && ultimoDigito % 2 === 0 || cadena%2 === 0 && ultimoDigito % 2 !== 0);
+        if(!esValida){
+            alert("ERROR: El numero de la tarjeta es inválido.")
+        }else{
+            return esValida;
+        }
     }
+
 }
 
 
