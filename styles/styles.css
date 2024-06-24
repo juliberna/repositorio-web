@@ -1048,11 +1048,11 @@ body {
   transition: all 0.3s;
 }
 
+
+.desactivada{
+  pointer-events: none;
+}
 .contenedor-carousel{
   margin: 0 600px;
   height: 500px;
 }
-
-
-
-

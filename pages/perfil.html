@@ -59,7 +59,7 @@
             <p>Repetir contraseña</p>
             <input
               type="password"
-              id="contraseña"
+              id="repetir-contrasenia"
               placeholder="Ingrese nueva contraseña"
             />
           </div>
@@ -84,16 +84,16 @@
               <input
                 type="number"
                 name="pagos"
-                id="tarjeta-credito"
+                id="numeros-tarjeta"
                 placeholder="Numero de tarjeta"
                 minlength="16"
-                maxlength="16"
+                maxlength="19"
                 size="20"
               />
               <input
                 type="password"
                 name="pagos"
-                id="tarjeta-credito"
+                id="clave-tarjeta"
                 placeholder="XXX"
                 minlength="3"
                 maxlength="3"
@@ -144,13 +144,13 @@
       </div>
       <div class="contenedor-botones-perfil">
         <div class="boton_cambios">
-          <a href="#">Guardar cambios</a>
+          <a href="#" id="guardar-cambios" class="desactivada">Guardar cambios</a>
         </div>
         <div class="boton_cancel_sub">
           <a href="#">Cancelar subscripcion</a>
         </div>
       </div>
     </div>
-    
+    <script src="../js/vista_perfil.js"></script>
   </body>
 </html>
