@@ -54,18 +54,19 @@
                     id="tarjeta-credito"
                     placeholder="Número de tarjeta"
                     minlength="16"
-                    maxlength="16"
+                    maxlength="19"
                     size="20"
                   />
                   <input
                     type="password"
                     name="pagos"
-                    id="tarjeta-credito"
+                    id="tarjeta-credito-cvv"
                     placeholder="XXX"
                     minlength="3"
                     maxlength="3"
                     size="3"
                   />
+                  <p id="error-message-tarjeta" class="error-message"></p>
                 </div>
               </div>
 
@@ -109,7 +110,7 @@
               </div>
 
               <div class="botones-registro">
-                <div class="boton-confirmar">
+                <div id="confirmar" class="boton-confirmar">
                   <a href="../index.html">Confirmar</a>
                 </div>
                 <div class="boton-cancelar">
