@@ -1,28 +1,37 @@
-document.addEventListener("DOMContentLoaded", function(){
-    const temporadaSelect = document.getElementById("temporadas");
+document.addEventListener("DOMContentLoaded", function() {
+    const temporadasSelect = document.getElementById("temporadas");
     const capitulosSelect = document.getElementById("capitulos");
 
-    const dataSeries = {
-        1:8,
-        2:10,
-        3:13,
-        4:15,
-        5:8
+    const episodiosPorTemporada = {
+        temporada1: 7,
+        temporada2: 13,
+        temporada3: 13,
+        temporada4: 13,
+        temporada5: 16
     };
 
-    temporadaSelect.addEventListener("change", function(){
-        const temporadaSeleccionada = temporadaSelect.value;
-        capitulosSelect.innerHTML = "<option value=''>Capitulos</option>";
+    temporadasSelect.addEventListener("change", function() {
+        const selectedTemporada = temporadasSelect.value;
 
-        if(temporadaSeleccionada){
-            const numeroCapitulos = dataSeries[temporadaSeleccionada];
+        // Limpia los capítulos existentes
+        while (capitulosSelect.firstChild) {
+            capitulosSelect.removeChild(capitulosSelect.firstChild);
+        }
 
-            for(let i = 1; i <= numeroCapitulos; i++){
-                const opcion = document.createElement("option");
-                opcion.value = `capitulo${i}`;
-                opcion.textContent = `Capitulo ${i}`;
-                capitulosSelect.appendChild(opcion);
+        // Agrega la opción predeterminada
+        const opcionDefault = document.createElement("option");
+        opcionDefault.value = "";
+        opcionDefault.textContent = "Capítulos";
+        capitulosSelect.appendChild(opcionDefault);
+
+        if (selectedTemporada && episodiosPorTemporada[selectedTemporada]) {
+            const numEpisodios = episodiosPorTemporada[selectedTemporada];
+            for (let i = 1; i <= numEpisodios; i++) {
+                const option = document.createElement("option");
+                option.value = `capitulo${i}`;
+                option.textContent = `Capítulo ${i}`;
+                capitulosSelect.appendChild(option);
             }
         }
-    })
-})
+    });
+});
