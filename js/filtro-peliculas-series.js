@@ -1,43 +1,45 @@
 window.onload = function() {
     const peliculas = [
-        { title: 'Interstellar', img: '../assets/images/interstellar.jpg', link: 'detalles-peliculas.html' },
-        { title: 'Prestige', img: '../assets/images/prestige.jpg' },
-        { title: 'Tenet', img: '../assets/images/tenet.jpg' },
-        { title: 'Memento', img: '../assets/images/memento.jpg' },
-        { title: 'Inception', img: '../assets/images/inception.jpg' },
-        { title: 'Dunkirk', img: '../assets/images/dunkirk.jpg' },
-        { title: 'Dark', img: '../assets/images/b-dark.jpg' }
+        { titulo: 'Interstellar', img: '../assets/images/interstellar.jpg', categoria: 'ciencia-ficcion', link: 'detalles-peliculas.html' },
+        { titulo: 'Prestige', img: '../assets/images/prestige.jpg', categoria: 'suspenso' },
+        { titulo: 'Tenet', img: '../assets/images/tenet.jpg', categoria: 'ciencia-ficcion' },
+        { titulo: 'Memento', img: '../assets/images/memento.jpg', categoria: 'suspenso' },
+        { titulo: 'Inception', img: '../assets/images/inception.jpg', categoria: 'ciencia-ficcion' },
+        { titulo: 'Dunkirk', img: '../assets/images/dunkirk.jpg', categoria: 'misterio' },
+        { titulo: 'Dark', img: '../assets/images/b-dark.jpg', categoria: 'ciencia-ficcion' }
     ];
 
     const series = [
-        { title: 'Breaking Bad', img: '../assets/images/breakingbad.jpg', link: 'detalles-series.html' },
-        { title: 'Supernatural', img: '../assets/images/supernatural.jpg' },
-        { title: 'Game of Thrones', img: '../assets/images/gameofthrones.jpg' },
-        { title: 'Euphoria', img: '../assets/images/euphoria.jpg' },
-        { title: 'Arrow', img: '../assets/images/arrow.jpg' },
-        { title: 'Big Bang Theory', img: '../assets/images/bigbang.jpg' },
-        { title: 'Friends', img: '../assets/images/friends.jpg' }
+        { titulo: 'Breaking Bad', img: '../assets/images/breakingbad.jpg', categoria: 'misterio', link: 'detalles-series.html' },
+        { titulo: 'Supernatural', img: '../assets/images/supernatural.jpg', categoria: 'suspenso' },
+        { titulo: 'Game of Thrones', img: '../assets/images/gameofthrones.jpg', categoria: 'suspenso' },
+        { titulo: 'Euphoria', img: '../assets/images/euphoria.jpg', categoria: 'ciencia-ficcion' },
+        { titulo: 'Arrow', img: '../assets/images/arrow.jpg', categoria: 'ciencia-ficcion' },
+        { titulo: 'Big Bang Theory', img: '../assets/images/bigbang.jpg', categoria: 'misterio' },
+        { titulo: 'Friends', img: '../assets/images/friends.jpg', categoria: 'misterio' }
     ];
 
     const contenidoInicio = document.getElementById('contenido-inicio');
+    const categoriasSelect = document.getElementById('categorias');
+    const busquedaInput = document.querySelector('.busqueda-nombre input');
 
     function crearElementoMultimedia(item) {
-        const container = document.createElement('div');
-        const imgElement = document.createElement('img');
-        imgElement.src = item.img;
-        imgElement.alt = item.title;
+        const contenedor = document.createElement('div');
+        const imgElemento = document.createElement('img');
+        imgElemento.src = item.img;
+        imgElemento.alt = item.titulo;
 
         if (item.link) {
             const linkElement = document.createElement('a');
             linkElement.href = item.link;
             linkElement.target = '_blank';
-            linkElement.appendChild(imgElement);
-            container.appendChild(linkElement);
+            linkElement.appendChild(imgElemento);
+            contenedor.appendChild(linkElement);
         } else {
-            container.appendChild(imgElement);
+            contenedor.appendChild(imgElemento);
         }
 
-        return container;
+        return contenedor;
     }
 
     function mostrarPeliculasYSeries() {
@@ -68,6 +70,63 @@ window.onload = function() {
         });
     }
 
+    function filtrarPorCategoria(categoria) {
+        contenidoInicio.innerHTML = '';
+
+        peliculas.forEach(pelicula => {
+            if (pelicula.categoria === categoria) {
+                contenidoInicio.appendChild(crearElementoMultimedia(pelicula));
+            }
+        });
+
+        series.forEach(serie => {
+            if (serie.categoria === categoria) {
+                contenidoInicio.appendChild(crearElementoMultimedia(serie));
+            }
+        });
+    }
+
+    function filtrarPorNombre() {
+        const textoBusqueda = busquedaInput.value.trim().toLowerCase();
+    
+        const peliculasFiltradas = peliculas.filter(pelicula =>
+            pelicula.titulo.toLowerCase().includes(textoBusqueda)
+        );
+    
+        const seriesFiltradas = series.filter(serie =>
+            serie.titulo.toLowerCase().includes(textoBusqueda)
+        );
+    
+        contenidoInicio.innerHTML = '';
+    
+        peliculasFiltradas.forEach(pelicula => {
+            contenidoInicio.appendChild(crearElementoMultimedia(pelicula));
+        });
+    
+        seriesFiltradas.forEach(serie => {
+            contenidoInicio.appendChild(crearElementoMultimedia(serie));
+        });
+    }
+
+    function filtrarContenido() {
+        const categoriaSeleccionada = categoriasSelect.value;
+
+        if (busquedaInput.value.trim() !== '') {
+            filtrarPorNombre();
+        } else if (categoriaSeleccionada === 'peliculas') {
+            mostrarSoloPeliculas();
+        } else if (categoriaSeleccionada === 'series') {
+            mostrarSoloSeries();
+        } else if (categoriaSeleccionada !== 'todas') {
+            filtrarPorCategoria(categoriaSeleccionada);
+        } else {
+            mostrarPeliculasYSeries();
+        }
+    }
+
+    categoriasSelect.addEventListener('change', filtrarContenido);
+    busquedaInput.addEventListener('input', filtrarContenido);
+
     mostrarPeliculasYSeries();
 
     document.querySelector('.home a').addEventListener('click', function(e) {
@@ -84,5 +143,12 @@ window.onload = function() {
         e.preventDefault();
         mostrarSoloSeries();
     });
+
+    document.getElementById('cerrar-sesion').addEventListener('click', function(e) {
+        e.preventDefault();
+        localStorage.clear();
+        window.location.href = "../index.html"; 
+    });
 };
+
 
