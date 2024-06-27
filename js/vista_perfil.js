@@ -1,9 +1,9 @@
-window.onload = function(){
+window.onload = function() {
 
     let boton = document.querySelector("#guardar-cambios");
     let contrasenia = document.querySelector("#contraseña");
     let repetirContrasenia = document.querySelector("#repetir-contrasenia");
-    let inputTarjeta = document.querySelector("#tarjeta-credito")
+    let inputTarjeta = document.querySelector("#tarjeta-credito");
     let inputCupon = document.querySelector("#cupon-pago");
     let inputTransferencia = document.querySelector("#transferencia");
     let inputPago = document.querySelector("#pago-facil");
@@ -11,25 +11,85 @@ window.onload = function(){
     let claveTarjeta = document.querySelector("#clave-tarjeta");
     let numeroTarjeta = document.querySelector("#numeros-tarjeta");
 
+    // Event listeners
     contrasenia.addEventListener("keyup", habilitarBotonDeGuardar);
     repetirContrasenia.addEventListener("keyup", habilitarBotonDeGuardar);
     inputTarjeta.addEventListener("click", function(){
         habilitarBotonDeGuardar();
         destildar();
+        guardarMetodoPago();
     });
     inputCupon.addEventListener("click", function(){
         habilitarBotonDeGuardar();
         destildar();
         cuponDePago();
+        guardarMetodoPago();
     });
     inputTransferencia.addEventListener("click", function(){
         habilitarBotonDeGuardar();
         destildar();
+        guardarMetodoPago();
     });
-    inputPago.addEventListener("click",destildar);
-    inputRapi.addEventListener("click",destildar);
-    claveTarjeta.addEventListener("keyup", habilitarBotonDeGuardar);
-    numeroTarjeta.addEventListener("blur",habilitarBotonDeGuardar);
+    inputPago.addEventListener("click", function(){
+        destildar();
+        guardarMetodoPago();
+    });
+    inputRapi.addEventListener("click", function(){
+        destildar();
+        guardarMetodoPago();
+    });
+    claveTarjeta.addEventListener("keyup", function(){
+        habilitarBotonDeGuardar();
+        guardarMetodoPago();
+    });
+    numeroTarjeta.addEventListener("blur", function(){
+        habilitarBotonDeGuardar();
+        guardarMetodoPago();
+    });
+
+    // Store payment method in localStorage
+    function guardarMetodoPago() {
+        let metodoPago = {};
+
+        if (inputTarjeta.checked) {
+            metodoPago.tipo = "tarjeta";
+            metodoPago.numero = numeroTarjeta.value;
+            metodoPago.clave = claveTarjeta.value;
+        } else if (inputCupon.checked) {
+            metodoPago.tipo = "cupon";
+            metodoPago.cupon = inputPago.checked ? "pago-facil" : "rapipago";
+        } else if (inputTransferencia.checked) {
+            metodoPago.tipo = "transferencia";
+        }
+
+        console.log("Guardando método de pago:", metodoPago);
+        localStorage.setItem('metodoPago', JSON.stringify(metodoPago));
+    }
+
+    function cargarMetodoPago() {
+        let metodoPago = JSON.parse(localStorage.getItem('metodoPago'));
+
+        console.log("Cargando método de pago:", metodoPago);
+
+        if (metodoPago) {
+            if (metodoPago.tipo === "tarjeta") {
+                inputTarjeta.checked = true;
+                numeroTarjeta.value = metodoPago.numero;
+                claveTarjeta.value = metodoPago.clave;
+            } else if (metodoPago.tipo === "cupon") {
+                inputCupon.checked = true;
+                if (metodoPago.cupon === "pago-facil") {
+                    inputPago.checked = true;
+                } else if (metodoPago.cupon === "rapipago") {
+                    inputRapi.checked = true;
+                }
+            } else if (metodoPago.tipo === "transferencia") {
+                inputTransferencia.checked = true;
+            }
+        }
+    }
+
+    cargarMetodoPago();
 
     function esCaracterEspecial(caracter){
         let cadenaDeCaracteres  = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/;
