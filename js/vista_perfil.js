@@ -11,6 +11,8 @@ window.onload = function(){
     let claveTarjeta = document.querySelector("#clave-tarjeta");
     let numeroTarjeta = document.querySelector("#numeros-tarjeta");
 
+    cargarDatosDesdeLocalStorage();
+
     contrasenia.addEventListener("keyup", habilitarBotonDeGuardar);
     repetirContrasenia.addEventListener("keyup", habilitarBotonDeGuardar);
     inputTarjeta.addEventListener("click", function(){
@@ -105,6 +107,8 @@ window.onload = function(){
             return esValida;
         }
     }
+
+    
 
 }
 
