@@ -554,7 +554,7 @@ body {
   transition: all 0.3s;
 }
 
-.peliculas-inicio{
+.peliculas-inicio, .contenido-inicio{
   display: grid;
   grid-template-columns: 
     repeat(
@@ -565,7 +565,7 @@ body {
     margin: 80px 100px;
 }
 
-.peliculas-inicio img{
+.peliculas-inicio img, .contenido-inicio img{
   border-radius: 8px;
   width: 100%;
   height: 250px;
