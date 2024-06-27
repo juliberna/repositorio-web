@@ -10,9 +10,7 @@ window.onload = function(){
     let inputRapi = document.querySelector("#rapipago");
     let claveTarjeta = document.querySelector("#clave-tarjeta");
     let numeroTarjeta = document.querySelector("#numeros-tarjeta");
-
-    cargarDatosDesdeLocalStorage();
-
+    
     contrasenia.addEventListener("keyup", habilitarBotonDeGuardar);
     repetirContrasenia.addEventListener("keyup", habilitarBotonDeGuardar);
     inputTarjeta.addEventListener("click", function(){
@@ -108,7 +106,7 @@ window.onload = function(){
         }
     }
 
-    
+
 
 }
 
